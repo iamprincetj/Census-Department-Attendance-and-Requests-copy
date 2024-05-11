@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CENSUS DEPARTMENT</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome CDN Link For Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  </head>
+  <body>
+    <form action="" id="mailForm" style="margin-top: 20rem;">
+        <div class="hero-image">
+            <img src="image/mail.png" style="margin-top: 13rem;">
+          </div><br>
+          <div class="form-group fullname">
+            <label for="">Reference ID</label>
+            <input type="text" id="refId" placeholder="Enter your Address">
+          </div>
+      <div class="form-group posting">
+        <label for="posting">Department</label>
+        <select id="posting" class="department">
+            <option value="" selected disabled>Select Department</option>
+       <option value="Male">Office of the DG</option> 
+          <option value="Female">Cartography Department
+          </option>
+          <option value="Male">Population Management
+          </option> 
+          <option value="Female">General Services
+          </option>
+          <option value="Male">Procurement
+          </option> 
+          <option value="Female">Secretary to the Commission
+          </option>
+          <option value="Female">Human Resource Management and Administration
+          </option>
+          <option value="Male">Public Relations Department
+          </option> 
+          <option value="Female">Vital Registration Department
+          </option>
+          <option value="Male">Legal Department
+          </option> 
+          <option value="Female">Population Institute and Studies Department
+          </option>
+          <option value="Male">Public Administration Department
+          </option> 
+          <option value="Female">Account Department
+          </option>
+          <option value="Male">ICT Department
+          </option> 
+          <option value="Female">Special Duties Department
+        </select>
+      </div>
+      <div class="form-group fullname">
+        <label for="">File Name</label>
+        <input type="text" id="filename" placeholder="Enter your Address">
+      </div>
+      <div class="form-group posting">
+        <label for="posting">Category</label>
+        <select id="posting" class="category">
+            <option value="" selected disabled>Select Category</option>
+       <option value="Male">Incoming</option> 
+          <option value="Female">Outgoing
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group posting">
+        <label for="posting">State</label>
+        <select id="posting" class="state">
+          <option value="" selected disabled>Select State</option>
+          <option value="Abia State">Abia State</option>
+          <option value="Adamawa State">Adamawa State</option>
+          <option value="Akwa Ibom State">Akwa Ibom State</option>
+          <option value="Anambra State">Anambra State</option>
+          <option value="Bauchi State">Bauchi State</option>
+          <option value="Bayelsa State">Bayelsa State</option>
+          <option value="Benue State">Benue State</option>
+          <option value="Borno State">Borno State</option>
+          <option value="Cross River State">Cross River State</option>
+          <option value="Delta State">Delta State</option>
+          <option value="Ebonyi State">Ebonyi State</option>
+          <option value="Edo State">Edo State</option>
+          <option value="Ekiti State">Ekiti State</option>
+          <option value="Enugu State">Enugu State</option>
+          <option value="Federal Capital Territory">Federal Capital Territory</option>
+          <option value="Gombe State">Gombe State</option>
+          <option value="Imo State">Imo State</option>
+          <option value="Jigawa State">Jigawa State</option>
+          <option value="Kaduna State">Kaduna State</option>
+          <option value="Kano State">Kano State</option>
+          <option value="Katsina State">Katsina State</option>
+          <option value="Kebbi State">Kebbi State</option>
+          <option value="Kogi State">Kogi State</option>
+          <option value="Kwara State">Kwara State</option>
+          <option value="Lagos State">Lagos State</option>
+          <option value="Nasarawa State">Nasarawa State</option>
+          <option value="Niger State">Niger State</option>
+          <option value="Ogun State">Ogun State</option>
+          <option value="Ondo State">Ondo State</option>
+          <option value="Osun State">Osun State</option>
+          <option value="Oyo State">Oyo State</option>
+          <option value="Plateau State">Plateau State</option>
+          <option value="Rivers State">Rivers State</option>
+          <option value="Sokoto State">Sokoto State</option>
+          <option value="Taraba State">Taraba State</option>
+          <option value="Yobe State">Yobe State</option>
+          <option value="Zamfara State">Zamfara State</option>
+      </select>
+      
+      </div>
+
+      <!---<div class="form-group fullname">
+        <label for="lga">LGA</label>
+        <select id="lga" name="lga">
+          <option value="" selected disabled>Select LGA</option>
+      </select>      
+    </div>-->
+
+    <div class="form-group fullname">
+      <label for="">LGA</label>
+      <input type="text" id="LGA" placeholder="Enter LGA">
+    </div>
+
+      <div class="form-group fullname">
+        <label for="">Mail Topic</label>
+        <input type="text" id="mailTopic" placeholder="Enter your Address">
+      </div>
+      <div class="form-group date">
+        <label for="date">Mail Date</label>
+        <input type="date" id="date" placeholder="Select your date" disabled>
+      </div>
+      <div class="form-group time">
+        <label for="time">Time</label>
+        <input type="text" id="time" placeholder="Current time" disabled>
+    </div><br>
+       
+      <div class="form-group submit-btn">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="mail.js"></script>
+    <script src="script2.js"></script>
+    <script src="script3.js"></script>
+    <script src="lga.js"></script>
+
+  </body>
+</html>

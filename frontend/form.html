@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CENSUS DEPARTMENT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome CDN Link For Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  </head>
+  <body>
+    
+    <form id='attendance-form' action="" style="margin-top: 6rem;" method="POST">
+      <div class="hero-image" style="margin-top: 5rem;">
+        <img src="image/Asset 82census.png">
+      </div><br>
+      <br><h3>ATTENDANCE</h3><br>
+
+      <div class="location-info">
+        <label for="latitude" style="font-size: 12px;">Latitude: <span id="latitude"></span></label>
+        <span id="latitude"></span>
+    </div><br>
+    
+    <div class="location-info">
+        <label for="longitude" style="font-size: 12px;">Longitude: <span id="longitude"></span></label>
+       
+    </div><br><br>
+      <!--<div class="form-group fullname">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" placeholder="Enter your full name">
+      </div>-->
+
+      <div class="form-group posting">
+        <label for="posting">Full Name</label>
+        <select id="posting">
+            <option value="" selected disabled>Select Name</option>
+       <option value="Male">Ag. Director Abubakar Bello Afegbua</option> 
+          <option value="Female">Abdullahi Abubakar
+          </option>
+          <option value="Male">Abubakar Aisha
+          </option> 
+          <option value="Female">Abubakar Muhammad Zayyad
+          </option>
+          <option value="Male">Achinonu Pamela
+          </option> 
+          <option value="Female">Adebayo Olayide Ajani
+          </option>
+          <option value="Female">Adesanya Oluwafemi Dayo
+          </option>
+          <option value="Male">Agabi Alhassan Yusuf
+          </option> 
+          <option value="Female">Aisaborhale Victor Emiohe
+          </option>
+          <option value="Male">Ajayi Oluwaseun
+          </option> 
+          <option value="Female">Ajayi Oluwatosin Esther
+          </option>
+          <option value="Male">Aliyu Taofeeq
+          </option> 
+          <option value="Female">Allah-Kayisafiyanu Safiyanu
+          </option>
+          <option value="Male">Bello Usman
+          </option> 
+          <option value="Female">Bukarmusa Alhaji
+          </option>
+          <option value="Male">Bulus Jonathan Bulus
+          </option> 
+          <option value="Female">Charlie Samuel Silas
+          </option>
+          <option value="Male">Danladi Chewazalo Juliet
+          </option> 
+          <option value="Female">Duru Emeka Jackline
+          </option>
+          <option value="Male">Ezeihekaibee Sylvia Chidumebi
+          </option> 
+          <option value="Female">Ezekwe Harrison Tabansi
+          </option>
+          <option value="Male">Gajimi Umar
+          </option> 
+          <option value="Female">Gurinsa'Adu Dahiru
+          </option>
+          <option value="Male">Hammed Titilayo Tawakalitu
+          </option> 
+          <option value="Female">Haruna Audu Falnyi
+          </option>
+          <option value="Female">Ibrahim Habibu Ibbi
+          </option>
+          <option value="Male">Ibrahim Yakubu  Aduku
+          </option> 
+          <option value="Female">Jalingo Inuwa Bakare
+          </option>
+          <option value="Male">Joseph Taye Oluwaseyi Taye
+          </option> 
+          <option value="Female">Kareem Olushola
+          </option>
+          <option value="Female">Madaki Abubakar
+          </option>
+          <option value="Male">Makinwa Paul Tobiloba
+          </option> 
+          <option value="Female">Mohammed Ahmed Wudini
+          </option>
+          <option value="Male">Muhammad Musa Shabbal
+          </option> 
+          <option value="Female">Sylvia Dumebi
+          </option>
+          <option value="Male">Musa Vincent Ogaji
+          </option> 
+          <option value="Female">Ndefo Afamefuna Nkemjika
+          </option>
+          <option value="Male">Nemieboka Amina Abigail
+          </option> 
+          <option value="Female">Njoku Benneth Chinedu
+          </option>
+          <option value="Male">Nteme Barbara Francis
+          </option> 
+          <option value="Female">Odela Joan Ame
+          </option>
+          <option value="Male">Odibo Aghogho P.
+          </option> 
+          <option value="Female">Ogbole Anthony
+          </option>
+          <option value="Male">Ogbu Emmanuel Chisom
+          </option> 
+          <option value="Female">Ogedegbe Josephine Ese
+          </option>
+          <option value="Male">Ogenyi Sandra
+          </option> 
+          <option value="Female">Ogidi Mary Oyiweche
+          </option>
+          <option value="Male">Oke Olayinka Oluwatosin
+          </option> 
+          <option value="Female">Olufadele Elizabeth Bose
+          </option>
+          <option value="Male">Omonijo Ibukunoluwa
+          </option> 
+          <option value="Female">Osunde Helen Ebosetale
+          </option>
+          <option value="Female">Oyibo Onyeiweanehi Violet
+          </option>
+          <option value="Male">Raymond -Sen Jinteno
+          </option> 
+          <option value="Female">Saleh Abubakar
+          </option>
+          <option value="Male">Sandra Henry
+          </option> 
+          <option value="Female">Shuaibu Mohammed Jamiu
+          </option>
+          <option value="Male">Solagbade Peter Oluwole
+          </option> 
+          <option value="Female">Tsakpa Adigizi Anthony
+          </option>
+          <option value="Male">Uchechukwu Ngozi Clara
+          </option> 
+          <option value="Female">Udem Gibson Chimezie
+          </option>
+          <option value="Male">Umeaniba Maureen
+          </option> 
+          <option value="Female">Usman  Halima Said
+          </option>
+          <option value="Male">Usman Saad
+          </option> 
+          <option value="Female">Yusuf Imran Musa
+          </option>
+        </select>
+      </div>
+      <!---<div class="form-group email">
+        <label >Grade Level</label>
+        <input type="text" placeholder="Enter your grade level">
+      </div>-->
+      <div class="form-group">
+        <div>
+          <label for="currentTime">Attendance Time:</label>
+          <span id="currentTime"></span>
+      </div><br>
+
+      <div class="form-group time">
+        <label for="time">Time</label>
+        <input type="text" id="time" name="time" placeholder="Current time" disabled>
+    </div>
+        
+      <div class="form-group date">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" placeholder="Select your date" disabled>
+      </div>
+      <div class="form-group posting">
+        <label for="posting">Posting</label>
+        <select id="postingOffice">
+            <!-- <option value="" selected disabled>NPC Headquaters</option>-->
+        <option value="Male">NPC Headquaters</option> 
+        <option value="Female">NPC Wuye Office</option>
+        </select>
+      </div>
+      <div class="form-group submit-btn">
+        <input class="submit-form" type="submit" value="Submit">
+      </div>
+
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="gpscript.js"></script>
+    <script src="main.js" type="module"></script>
+    <script src="script2.js"></script>
+    <script src="script3.js"></script>
+
+  </body>
+</html>
