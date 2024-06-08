@@ -1,29 +1,49 @@
-const requestDataRouter = require('express').Router()
-const RequestData = require('../models/requestform')
+const requestDataRouter = require('express').Router();
+const RequestData = require('../models/requestform');
 
+requestDataRouter.get('/', async (request, response) => {
+    const requests = await RequestData.find({});
+    response.json(requests);
+});
 
 requestDataRouter.post('/', async (request, response) => {
-    const { fullname, phoneNumber, address, email, state, LGA, date, timeline, gender, time, user_request } = request.body
-
-    const dateTransform = new Date(date+ ' '+ time)
-
-    const requestData = new RequestData({
+    const {
         fullname,
         phoneNumber,
-        email,
         address,
+        email,
         state,
         LGA,
-        timeline,
+        date,
+        status,
         gender,
-        date: dateTransform.toDateString(),
-        time: dateTransform.toTimeString(),
-        user_request
-    })
+        time,
+        userRequest,
+    } = request.body;
 
-    const savedRequest = await requestData.save()
-    response.status(201).json(savedRequest)
-})
+    const dateTransform = new Date(date + ' ' + time);
+    try {
+        const requestData = new RequestData({
+            fullname,
+            phoneNumber,
+            email,
+            address,
+            state,
+            LGA,
+            status,
+            gender,
+            date: dateTransform.toDateString(),
+            time: dateTransform.toTimeString(),
+            userRequest,
+        });
 
+        const savedRequest = await requestData.save();
+        response.status(201).json(savedRequest);
+    } catch (error) {
+        if (error.name === 'ValidationError') {
+            response.status(400).json({ error: error.message });
+        }
+    }
+});
 
-module.exports = requestDataRouter
+module.exports = requestDataRouter;

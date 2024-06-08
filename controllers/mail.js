@@ -1,10 +1,33 @@
-const mailRouter = require('express').Router()
+const Mail = require('../models/mail');
 
+const mailRouter = require('express').Router();
 
-mailRouter.post('/', async (request, response) => {
-    const { referenceId, department, filename, category, state, LGA, mailTopic, date, time } = request.body
+mailRouter.post('/', async (req, res) => {
+    const {
+        referenceId,
+        department,
+        receiptDate,
+        category,
+        sender,
+        request,
+        mailDate,
+        time,
+    } = req.body;
 
-    console.log(request.body)
-})
+    const newMail = new Mail({
+        referenceId,
+        department,
+        receiptDate,
+        category,
+        sender,
+        request,
+        mailDate,
+        time,
+    });
 
-module.exports = mailRouter
+    const savedMail = await newMail.save();
+
+    res.status(201).json(savedMail);
+});
+
+module.exports = mailRouter;
