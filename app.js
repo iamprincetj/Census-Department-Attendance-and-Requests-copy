@@ -29,14 +29,13 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());
 
-// catch all route
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
-
 app.use('/api/users_attendance', userRouter);
 app.use('/api/request', requestDataRouter);
 app.use('/api/mail', mailRouter);
 app.use('/api/login', loginRouter);
+// catch all route
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 module.exports = app;

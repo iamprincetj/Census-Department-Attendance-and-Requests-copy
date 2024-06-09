@@ -29,8 +29,6 @@ userRouter.get('/download', async (request, response) => {
         (item) => new Date(item.date).getMonth() === Number(month)
     );
 
-    console.log(attendanceByMonth);
-
     if (attendanceByMonth.length > 0) {
         if (format === 'csv') {
             const csv = json2csv(
@@ -117,7 +115,6 @@ userRouter.post('/', async (request, response) => {
         response.status(201).json(savedUser);
     } catch (error) {
         if (error.name === 'ValidationError') {
-            console.log('here');
             response.status(400).json({ error: error.message });
         }
     }
