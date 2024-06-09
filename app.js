@@ -22,7 +22,7 @@ const url =
 
 mongoose
     .connect(url)
-    .then(() => console.log('connected to MongoDB'))
+    .then(() => console.log('connected to MongoDB', url))
     .catch(() => console.error('failed to connect to MongoDB'));
 
 app.use(bodyParser.json());
