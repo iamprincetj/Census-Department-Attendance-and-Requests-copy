@@ -9,43 +9,23 @@ loginRouter.post('/', async (req, res) => {
     const { username, password } = req.body;
     const admin = await Admin.findOne({ username });
 
-    if (admin) {
-        if (!admin.passwordChanged) {
-            if (username === 'admin' && password === 'admin') {
-                const userForToken = {
-                    id: admin._id.toString(),
-                    username: admin.username,
-                };
-                const token = jwt.sign(userForToken, process.env.SECRET);
-                const tokenObject = { token, username: userForToken.username };
+    const passwordCorrect =
+        admin === null
+            ? false
+            : await bcrypt.compare(password, admin.passwordHash);
 
-                const newToken = new UserToken(tokenObject);
-                await newToken.save();
-                res.json(tokenObject);
-            }
-        } else {
-            const passwordCorrect = bcrypt.compare(password, admin.password);
-
-            if (!(admin && passwordCorrect)) {
-                return res
-                    .status(401)
-                    .json({ error: 'invalid username or password' });
-            }
-
-            const userForToken = {
-                id: admin._id.toString(),
-                username: admin.username,
-            };
-            const token = jwt.sign(userForToken, process.env.SECRET);
-            const tokenObject = { token, username: userForToken.username };
-
-            const newToken = new UserToken(tokenObject);
-            await newToken.save();
-            res.json(tokenObject);
-        }
-    } else {
+    if (!(admin && passwordCorrect)) {
         return res.status(401).json({ error: 'invalid username or password' });
     }
+
+    const userForToken = {
+        username: admin.username,
+        id: admin._id.toString(),
+    };
+
+    const token = jwt.sign(userForToken, process.env.SECRET);
+
+    res.status(200).send({ token, username: admin.username });
 });
 
 loginRouter.post('/change', async (req, res) => {

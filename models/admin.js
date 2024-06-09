@@ -6,15 +6,10 @@ const adminSchema = new mongoose.Schema({
         required: true,
         minlength: 3,
     },
-    password: {
+    passwordHash: {
         type: String,
         required: true,
         minlength: 5,
-    },
-
-    passwordChanged: {
-        type: Boolean,
-        default: false,
     },
 });
 

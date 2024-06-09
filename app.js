@@ -8,8 +8,8 @@ const userRouter = require('./controllers/user_attendance');
 const requestDataRouter = require('./controllers/requestform');
 const mailRouter = require('./controllers/mail');
 const loginRouter = require('./controllers/login');
-const verifyToken = require('./controllers/middleware');
 const path = require('path');
+const signupRouter = require('./controllers/signup');
 
 mongoose.set('strictQuery');
 
@@ -33,6 +33,7 @@ app.use('/api/users_attendance', userRouter);
 app.use('/api/request', requestDataRouter);
 app.use('/api/mail', mailRouter);
 app.use('/api/login', loginRouter);
+app.use('/api/signup', signupRouter);
 // catch all route
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
